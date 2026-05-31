@@ -8,7 +8,7 @@ public partial class Form1 : Form
     private const int ProgressIntervalMs = 50;
     private const int IconPadding = 12;
 
-    private readonly Timer _progressTimer;
+    private readonly System.Windows.Forms.Timer _progressTimer;
     private int _progressValue;
     private bool _prankActive;
     private IntPtr _desktopListView;
@@ -19,7 +19,7 @@ public partial class Form1 : Form
 
         cleanDesktopButton.Click += CleanDesktopButton_Click;
 
-        _progressTimer = new Timer { Interval = ProgressIntervalMs };
+        _progressTimer = new System.Windows.Forms.Timer { Interval = ProgressIntervalMs };
         _progressTimer.Tick += ProgressTimer_Tick;
     }
 
