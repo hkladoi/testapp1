@@ -1,6 +1,6 @@
 ﻿namespace DesktopPrank;
 
-partial class Form1
+partial class DesktopCleanerForm
 {
     /// <summary>
     ///  Required designer variable.
@@ -51,7 +51,7 @@ partial class Form1
         cleanProgressBar.TabIndex = 1;
         cleanProgressBar.Visible = false;
         // 
-        // Form1
+        // DesktopCleanerForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
@@ -61,7 +61,7 @@ partial class Form1
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
         MinimizeBox = true;
-        Name = "Form1";
+        Name = "DesktopCleanerForm";
         StartPosition = FormStartPosition.CenterScreen;
         Text = "Desktop Cleaner";
         ResumeLayout(false);

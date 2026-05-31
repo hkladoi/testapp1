@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 
 namespace DesktopPrank;
 
-public partial class Form1 : Form
+public partial class DesktopCleanerForm : Form
 {
     private const int ProgressDurationMs = 1500;
     private const int ProgressIntervalMs = 50;
@@ -13,7 +13,7 @@ public partial class Form1 : Form
     private bool _prankActive;
     private IntPtr _desktopIconListViewHandle;
 
-    public Form1()
+    public DesktopCleanerForm()
     {
         InitializeComponent();
 
@@ -145,7 +145,11 @@ public partial class Form1 : Form
 
     private static IntPtr MakeLParam(int x, int y)
     {
-        return unchecked((IntPtr)(int)((y << 16) | (x & 0xFFFF)));
+        short sx = (short)Math.Clamp(x, short.MinValue, short.MaxValue);
+        short sy = (short)Math.Clamp(y, short.MinValue, short.MaxValue);
+        ushort ux = (ushort)sx;
+        ushort uy = (ushort)sy;
+        return unchecked((IntPtr)(int)(ux | (uy << 16)));
     }
 
     private const int LVM_FIRST = 0x1000;
