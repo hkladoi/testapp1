@@ -1,0 +1,15 @@
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/DesktopPrank.GeneratedMSBuildEditorConfig.editorconfig
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/DesktopPrank.AssemblyInfoInputs.cache
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/DesktopPrank.AssemblyInfo.cs
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/DesktopPrank.csproj.CoreCompileInputs.cache
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/DesktopPrank.sourcelink.json
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/bin/Debug/net10.0-windows/DesktopPrank
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/bin/Debug/net10.0-windows/DesktopPrank.deps.json
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/bin/Debug/net10.0-windows/DesktopPrank.runtimeconfig.json
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/bin/Debug/net10.0-windows/DesktopPrank.dll
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/bin/Debug/net10.0-windows/DesktopPrank.pdb
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/DesktopPrank.dll
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/refint/DesktopPrank.dll
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/DesktopPrank.pdb
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/DesktopPrank.genruntimeconfig.cache
+/tmp/workspace/hkladoi/testapp1/DesktopPrank/obj/Debug/net10.0-windows/ref/DesktopPrank.dll
