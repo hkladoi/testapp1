@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesktopPrank")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ded87a5f9fe72de933bd3cb162ed92a7a8fe30ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb64698c8b0d290b11636768ba0ed95725a100aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesktopPrank")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesktopPrank")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

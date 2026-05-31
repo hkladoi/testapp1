@@ -117,7 +117,8 @@ public partial class DesktopCleanerForm : Form
             int row = i / columns;
             int x = bounds.Left + IconPadding + col * xStep;
             int y = bounds.Top + IconPadding + row * yStep;
-            SendMessage(_desktopIconListViewHandle, LVM_SETITEMPOSITION32, new IntPtr(i), MakeLParam(x, y));
+            var point = new POINT(x, y);
+            SendMessage(_desktopIconListViewHandle, LVM_SETITEMPOSITION32, new IntPtr(i), ref point);
         }
     }
 
@@ -143,14 +144,6 @@ public partial class DesktopCleanerForm : Form
             : FindWindowEx(defView, IntPtr.Zero, "SysListView32", null);
     }
 
-    private static IntPtr MakeLParam(int x, int y)
-    {
-        short sx = (short)Math.Clamp(x, short.MinValue, short.MaxValue);
-        short sy = (short)Math.Clamp(y, short.MinValue, short.MaxValue);
-        int packed = (sx & 0xFFFF) | (sy << 16);
-        return unchecked((IntPtr)packed);
-    }
-
     private const int LVM_FIRST = 0x1000;
     private const int LVM_GETITEMCOUNT = LVM_FIRST + 4;
     private const int LVM_SETITEMPOSITION32 = LVM_FIRST + 49;
@@ -164,6 +157,19 @@ public partial class DesktopCleanerForm : Form
         public int Bottom;
     }
 
+    [StructLayout(LayoutKind.Sequential)]
+    private struct POINT
+    {
+        public int X;
+        public int Y;
+
+        public POINT(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+    }
+
     [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     private static extern IntPtr FindWindow(string? lpClassName, string? lpWindowName);
 
@@ -172,4 +178,7 @@ public partial class DesktopCleanerForm : Form
 
     [DllImport("user32.dll", SetLastError = true)]
     private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, ref POINT lParam);
 }
