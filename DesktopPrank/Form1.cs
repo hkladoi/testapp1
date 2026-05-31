@@ -147,9 +147,8 @@ public partial class DesktopCleanerForm : Form
     {
         short sx = (short)Math.Clamp(x, short.MinValue, short.MaxValue);
         short sy = (short)Math.Clamp(y, short.MinValue, short.MaxValue);
-        ushort ux = (ushort)sx;
-        ushort uy = (ushort)sy;
-        return unchecked((IntPtr)(int)(ux | (uy << 16)));
+        int packed = (sx & 0xFFFF) | (sy << 16);
+        return unchecked((IntPtr)packed);
     }
 
     private const int LVM_FIRST = 0x1000;
