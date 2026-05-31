@@ -145,7 +145,7 @@ public partial class Form1 : Form
 
     private static IntPtr MakeLParam(int x, int y)
     {
-        return unchecked((IntPtr)((y << 16) | (x & 0xFFFF)));
+        return unchecked((IntPtr)(int)((y << 16) | (x & 0xFFFF)));
     }
 
     private const int LVM_FIRST = 0x1000;
