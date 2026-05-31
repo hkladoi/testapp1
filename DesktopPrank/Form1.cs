@@ -11,7 +11,7 @@ public partial class Form1 : Form
     private readonly System.Windows.Forms.Timer _progressTimer;
     private int _progressValue;
     private bool _prankActive;
-    private IntPtr _desktopListViewHandle;
+    private IntPtr _desktopIconListViewHandle;
 
     public Form1()
     {
@@ -78,8 +78,8 @@ public partial class Form1 : Form
 
     private void ActivatePrank()
     {
-        _desktopListViewHandle = GetDesktopListView();
-        if (_desktopListViewHandle == IntPtr.Zero)
+        _desktopIconListViewHandle = GetDesktopListView();
+        if (_desktopIconListViewHandle == IntPtr.Zero)
         {
             MessageBox.Show(this, "Couldn't find the desktop icon list.", "Desktop Cleaner",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -92,12 +92,12 @@ public partial class Form1 : Form
 
     private void HideIconsBehindWindow(Rectangle bounds)
     {
-        if (_desktopListViewHandle == IntPtr.Zero)
+        if (_desktopIconListViewHandle == IntPtr.Zero)
         {
             return;
         }
 
-        int count = SendMessage(_desktopListViewHandle, LVM_GETITEMCOUNT, IntPtr.Zero, IntPtr.Zero).ToInt32();
+        int count = SendMessage(_desktopIconListViewHandle, LVM_GETITEMCOUNT, IntPtr.Zero, IntPtr.Zero).ToInt32();
         if (count <= 0)
         {
             return;
@@ -117,7 +117,7 @@ public partial class Form1 : Form
             int row = i / columns;
             int x = bounds.Left + IconPadding + col * xStep;
             int y = bounds.Top + IconPadding + row * yStep;
-            SendMessage(_desktopListViewHandle, LVM_SETITEMPOSITION32, new IntPtr(i), MakeLParam(x, y));
+            SendMessage(_desktopIconListViewHandle, LVM_SETITEMPOSITION32, new IntPtr(i), MakeLParam(x, y));
         }
     }
 
